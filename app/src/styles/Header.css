@@ -1,0 +1,15 @@
+header {
+  background-color: var(--accent-color);
+  color: #fff;
+  height: 4rem;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
