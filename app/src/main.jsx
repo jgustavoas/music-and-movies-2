@@ -2,42 +2,20 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import indexRoutes from './routes';
+import routesProps from './objects/routes.obj';
 import './styles/index.css';
 
-const { ErrorPage, Root, Home, Artists, Albums, Tracks, Movies, Genres } =
-  indexRoutes;
+const children = routesProps.map(route => {
+  const { path, element } = route;
+  return { path, element: indexRoutes[element] };
+});
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: Root,
-    errorElement: ErrorPage,
-    children: [
-      {
-        path: '/',
-        element: Home,
-      },
-      {
-        path: '/artists',
-        element: Artists,
-      },
-      {
-        path: '/albums',
-        element: Albums,
-      },
-      {
-        path: '/tracks',
-        element: Tracks,
-      },
-      {
-        path: '/movies',
-        element: Movies,
-      },
-      {
-        path: '/genres',
-        element: Genres,
-      },
-    ],
+    element: indexRoutes.Root,
+    errorElement: indexRoutes.ErrorPage,
+    children,
   },
 ]);
 
