@@ -1,17 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import Root from './routes/root';
 import indexRoutes from './routes';
 import './styles/index.css';
 
-const { ErrorPage, Home, Artists, Albums, Tracks, Movies, Genres } =
+const { ErrorPage, Root, Home, Artists, Albums, Tracks, Movies, Genres } =
   indexRoutes;
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Root />,
+    element: Root,
     errorElement: ErrorPage,
     children: [
       {
