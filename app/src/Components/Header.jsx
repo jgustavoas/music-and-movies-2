@@ -1,15 +1,18 @@
+import { Link } from 'react-router-dom';
 import '../styles/Header.css';
 
 export default function Header() {
   return (
     <header>
-      <div>Music and Movies 2</div>
+      <div>
+        <Link to="/">Music and Movies 2</Link>
+      </div>
       <nav>
-        <button>Artists</button>
-        <button>Albums</button>
-        <button>Tracks</button>
-        <button>Movies</button>
-        <button>Genres</button>
+        <Link to={`/artists`}>Artists</Link>
+        <Link to={`/albums`}>Albums</Link>
+        <Link to={`/tracks`}>Tracks</Link>
+        <Link to={`/movies`}>Movies</Link>
+        <Link to={`/genres`}>Genres</Link>
       </nav>
     </header>
   );
