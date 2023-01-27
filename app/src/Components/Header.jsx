@@ -5,14 +5,26 @@ export default function Header() {
   return (
     <header>
       <div>
-        <Link to="/">Music and Movies 2</Link>
+        <Link to="/" title="Home">
+          Music and Movies 2
+        </Link>
       </div>
       <nav>
-        <Link to={`/artists`}>Artists</Link>
-        <Link to={`/albums`}>Albums</Link>
-        <Link to={`/tracks`}>Tracks</Link>
-        <Link to={`/movies`}>Movies</Link>
-        <Link to={`/genres`}>Genres</Link>
+        <Link to={`/artists`} title="Artists">
+          Artists
+        </Link>
+        <Link to={`/albums`} title="Albums">
+          Albums
+        </Link>
+        <Link to={`/tracks`} title="Tracks">
+          Tracks
+        </Link>
+        <Link to={`/movies`} title="Movies">
+          Movies
+        </Link>
+        <Link to={`/genres`} title="Genres">
+          Genres
+        </Link>
       </nav>
     </header>
   );
