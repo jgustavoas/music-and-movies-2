@@ -8,8 +8,13 @@ header {
   justify-content: space-between;
 }
 
+header a {
+  color: #fff;
+}
+
 nav {
   display: flex;
   align-items: center;
   gap: 1rem;
 }
+
