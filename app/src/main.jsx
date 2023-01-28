@@ -2,10 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import routeIndex from './routes';
-import routesProps from './objects/routes.obj';
+import routes from './objects/routes.obj';
 import './styles/index.css';
 
-const children = routesProps.map(route => {
+const children = routes.map(route => {
   const { path, element } = route;
   return { path, element: routeIndex[element] };
 });
