@@ -4,23 +4,23 @@ import Template from './template';
 import ErrorPage from './error-page';
 import pagesProps from '../objects/pagesProps.obj';
 
-const Pages = {};
+const commomPages = {};
 pagesProps.forEach(page => {
   const { route, title, columns } = page;
   const template = <Template title={title} columns={columns} />;
 
-  Pages[route] = template;
+  commomPages[route] = template;
 });
 
 export default {
-  ErrorPage: <ErrorPage />,
   Root: <Root />,
   Home: <Home />,
-  ...Pages,
+  ErrorPage: <ErrorPage />,
+  ...commomPages,
 };
 
 /* 
-  The "...Pages" spread sintax will render the following properties inside the export:
+  The "...commomPages" spread sintax will render the following properties inside the export:
   Artists: <Template title="..." columns="..." />,
   Albums: <Template title="..." columns="..." />,
   Tracks: <Template title="..." columns="..." />,
