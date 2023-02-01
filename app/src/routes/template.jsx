@@ -3,13 +3,13 @@ import { useData } from '../hooks/useData';
 import Table from '../Components/Table';
 import { updatePageTitle } from '../functions/page.func';
 
-export default function Template({ title, columns }) {
+export default function Template({ title }) {
   document.title = updatePageTitle(title);
-  useData();
+  const data = useData();
 
   return (
     <>
-      <h1>{title}</h1> <Table columns={columns} />
+      <h1>{title}</h1> <Table data={data} />
     </>
   );
 }

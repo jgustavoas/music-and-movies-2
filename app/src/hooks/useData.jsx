@@ -25,7 +25,5 @@ export function useData() {
     } else return null;
   }, []);
 
-  console.log('data :>> ', data);
-
   return data;
 }
