@@ -2,14 +2,16 @@ import Root from './root';
 import Home from './home';
 import Template from './template';
 import ErrorPage from './error-page';
-import pagesProps from '../objects/pagesProps.obj';
+import routes from '../objects/routes.obj';
 
 const commomPages = {};
-pagesProps.forEach(page => {
-  const { route, title, columns } = page;
-  const template = <Template title={title} columns={columns} />;
+const commomPagesRoutes = routes.slice(1); // Ignore the Home page
 
-  commomPages[route] = template;
+commomPagesRoutes.forEach(page => {
+  const { element, title } = page;
+  const template = <Template title={title} />;
+
+  commomPages[element] = template;
 });
 
 export default {
@@ -21,9 +23,9 @@ export default {
 
 /* 
   The "...commomPages" spread sintax will render the following properties inside the export:
-  Artists: <Template title="..." columns="..." />,
-  Albums: <Template title="..." columns="..." />,
-  Tracks: <Template title="..." columns="..." />,
-  Movies: <Template title="..." columns="..." />,
-  Genres: <Template title="..." columns="..." />,
+  Artists: <Template title="..." />,
+  Albums: <Template title="..." />,
+  Tracks: <Template title="..." />,
+  Movies: <Template title="..." />,
+  Genres: <Template title="..." />,
 */
