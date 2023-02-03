@@ -32,7 +32,7 @@ class Controller {
 
       const data = await models[MODEL].findAll(options[MODEL]);
 
-      res.json(data);
+      res.json({ table: MODEL, rows: data });
     } catch (error) {
       console.log('error :>> ', error);
       res.status(400).json(error);
