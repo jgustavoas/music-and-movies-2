@@ -1,29 +1,28 @@
 import { useState, useEffect } from 'react';
 
-export function useData() {
-  const { pathname } = document.location;
+export function useData(pathname) {
   const baseURL = 'http://localhost:3000';
   const endpoint = `${baseURL}${pathname}`;
 
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    if (pathname !== '/') {
-      let ignore = false;
+    if (pathname === '/') return null;
 
-      fetch(endpoint)
-        .then(response => response.json())
-        .then(json => {
-          if (!ignore) {
-            setData(json);
-          }
-        });
+    let ignore = false;
 
-      return () => {
-        ignore = true;
-      };
-    } else return null;
-  }, []);
+    fetch(endpoint)
+      .then(response => response.json())
+      .then(json => {
+        if (!ignore) {
+          setData(json);
+        }
+      });
+
+    return () => {
+      ignore = true;
+    };
+  }, [pathname]);
 
   return data;
 }
