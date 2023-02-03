@@ -4,30 +4,32 @@ export default [
     path: '/artists',
     element: 'Artists',
     title: '🎤 Artists page',
-    columns: ['Name', 'Genre'],
+    columns: ['artist', 'genre*'],
   },
   {
     path: '/albums',
     element: 'Albums',
     title: '💿 Albums page',
-    columns: ['Name', 'Genre', 'Artist'],
+    columns: ['album', 'genre*', 'artist*'],
   },
   {
     path: '/tracks',
     element: 'Tracks',
     title: '🎵 Tracks page',
-    columns: ['Name', 'Genre', 'Album', 'Artist'],
+    columns: ['track', 'genre*', 'album*', 'artist*'],
   },
   {
     path: '/movies',
     element: 'Movies',
     title: '🎬 Movies page',
-    columns: ['Name', 'Genre'],
+    columns: ['movie', 'genre*'],
   },
   {
     path: '/genres',
     element: 'Genres',
     title: '🎸 | 🎭 Genres page',
-    columns: ['Name'],
+    columns: ['genre'],
   },
 ];
+
+// The name with asterisk indicates that the column is from a joined table.
