@@ -14,7 +14,7 @@ export default function Table() {
 
   const { table, rows } = data;
   if (table !== pathname.slice(1)) return null;
-  if (!rows[0]) return NoData();
+  if (!rows[0]) return NoData(columns[0]);
 
   const thead = Thead(columns);
   const tbody = Tbody(rows, columns);
