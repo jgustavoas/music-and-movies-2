@@ -1,10 +1,14 @@
-import { useState, useEffect } from 'react';
+import { useReducer, useEffect } from 'react';
+import dataReducer from '../store/reducer';
+import routes from '../objects/routes.obj';
 
 export function useData(pathname) {
   const baseURL = 'http://localhost:3000';
-  const endpoint = `${baseURL}${pathname}`;
+  const [mainColumn] = routes.find(r => r.path === pathname).columns;
+  const endpoint = `${baseURL}${pathname}?by=${mainColumn}`;
 
-  const [data, setData] = useState(null);
+  const initialState = {};
+  const [data, dispatch] = useReducer(dataReducer, initialState);
 
   useEffect(() => {
     if (pathname === '/') return null;
@@ -15,7 +19,10 @@ export function useData(pathname) {
       .then(response => response.json())
       .then(json => {
         if (!ignore) {
-          setData(json);
+          dispatch({
+            type: 'LOAD',
+            data: json,
+          });
         }
       });
 
