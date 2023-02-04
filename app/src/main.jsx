@@ -2,11 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import routeIndex from './routes';
-import routes from './objects/routes.obj';
+import paths from './objects/paths.obj';
 import './styles/index.css';
 
-const children = routes.map(route => {
-  const { path, element } = route;
+const children = paths.map(p => {
+  const { path, element } = p;
   return { path, element: routeIndex[element] };
 });
 

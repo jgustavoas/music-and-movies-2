@@ -3,11 +3,11 @@ import { useData } from '../hooks/useData';
 import Thead from './Table.Thead';
 import Tbody from './Table.Tbody';
 import NoData from './Table.NoData';
-import routes from '../objects/routes.obj';
+import paths from '../objects/paths.obj';
 
 export default function Table() {
   const { pathname } = document.location;
-  const { columns } = routes.find(route => route.path === pathname);
+  const { columns } = paths.find(p => p.path === pathname);
 
   const data = useData(pathname);
   if (!data) return null;
