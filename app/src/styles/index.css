@@ -26,45 +26,30 @@ a:hover {
   color: #535bf2;
 }
 
-body {
-  margin: 0;
-  padding: 0;
-}
-
 #root {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
-main {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-}
-
-table {
-  max-width: 1680px;
-}
-
-th {
-  text-align: left;
-  text-transform: capitalize;
-}
-
-footer {
-  height: 4rem;
-  background-color: #e3e3e3;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+body {
+  margin: 0;
+  padding: 0;
 }
 
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+}
+
+table {
+  min-width: 50%;
+  max-width: 100rem;
+}
+
+th {
+  text-align: left;
+  text-transform: capitalize;
 }
 
 button {
@@ -77,12 +62,50 @@ button {
   background-color: #f9f9f9;
   color: var(--accent-color);
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: all 0.2s ease-out;
 }
+
 button:hover {
   border-color: #646cff;
 }
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+button.cta-button {
+  background-color: #646cff;
+  color: #fff;
+  font-weight: 600;
+}
+button.cta-button:hover {
+  background-color: var(--accent-color);
+  color: #fff;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+div.top-of-table-div {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+  min-width: 50%;
+  max-width: 100rem;
+  margin-bottom: 2rem;
+}
+
+footer {
+  height: 4rem;
+  background-color: #e3e3e3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

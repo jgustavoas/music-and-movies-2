@@ -1,3 +1,3 @@
 export default function NoData(record) {
-  return <div>No {record} yet. Try to add one record.</div>;
+  return <h2>No {record} yet! Try to create one.</h2>;
 }

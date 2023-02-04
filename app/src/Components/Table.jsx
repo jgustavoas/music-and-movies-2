@@ -14,16 +14,24 @@ export default function Table() {
 
   const { table, rows } = data;
   if (table !== pathname.slice(1)) return null;
-  if (!rows[0]) return NoData(columns[0]);
 
+  const record = columns[0];
+  const noData = !rows[0] ? NoData(record) : null;
   const thead = Thead(columns);
   const tbody = Tbody(rows, columns);
 
   return (
-    <table>
-      {thead}
-      {tbody}
-    </table>
+    <>
+      <div className="top-of-table-div">
+        {noData}
+        <button className="cta-button">Create {record}</button>
+      </div>
+
+      <table>
+        {thead}
+        {tbody}
+      </table>
+    </>
   );
 }
 
