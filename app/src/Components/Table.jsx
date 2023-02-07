@@ -3,6 +3,7 @@ import { useData } from '../hooks/useData';
 import Thead from './Table.Thead';
 import Tbody from './Table.Tbody';
 import NoData from './Table.NoData';
+import Modal from './Modal';
 import paths from '../objects/paths.obj';
 
 export default function Table() {
@@ -20,17 +21,22 @@ export default function Table() {
   const thead = Thead(columns);
   const tbody = Tbody(rows, columns);
 
+  const Table = noData ? null : (
+    <>
+      <table>
+        {thead}
+        {tbody}
+      </table>
+    </>
+  );
+
   return (
     <>
       <div className="top-of-table-div">
         {noData}
         <button className="cta-button">Create {record}</button>
       </div>
-
-      <table>
-        {thead}
-        {tbody}
-      </table>
+      {Table}
     </>
   );
 }
