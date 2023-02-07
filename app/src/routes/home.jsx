@@ -8,16 +8,19 @@ export default function Home() {
     <>
       <h1>Welcome to Music and Movies 2</h1>
       <div id="search-field">
-        <label htmlFor="search">Search</label>
-        <input type="text" name="search" id="search" />
-        <select name="item" id="item">
-          <option value=""> --- Filter ---</option>
-          <option value="artists">Artist</option>
-          <option value="albums">Album</option>
-          <option value="tracks">Track</option>
-          <option value="movies">Movie</option>
-          <option value="genres">Genre</option>
-        </select>
+        <section>
+          <input type="text" name="search" id="search" placeholder="Search" />
+          <select name="item" id="item">
+            <option value=""> --- Filter ---</option>
+            <option value="artists">Artist</option>
+            <option value="albums">Album</option>
+            <option value="tracks">Track</option>
+            <option value="movies">Movie</option>
+            <option value="genres">Genre</option>
+          </select>
+        </section>
+
+        <button className="cta-button">Search</button>
       </div>
     </>
   );
