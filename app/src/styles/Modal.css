@@ -1,5 +1,6 @@
 div#modal {
   position: absolute;
+  top: 0;
   background-color: transparent;
   backdrop-filter: blur(8px);
   width: 100%;
@@ -10,14 +11,15 @@ div#modal {
 }
 
 div#modal-container {
+  margin-top: -25rem;
   border: 1px solid var(--accent-color);
   border-radius: var(--border-radius);
-  width: auto;
+  background-color: #fff;
   padding: 2rem;
+  width: 50%;
+  min-height: 32vh;
   display: flex;
   flex-direction: column;
-  width: 50%;
-  min-height: 25vh;
   justify-content: space-between;
   box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
 }
