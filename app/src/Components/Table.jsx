@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import PropTypes from 'prop-types';
 import { useData } from '../hooks/useData';
 import Thead from './Table.Thead';
@@ -13,14 +14,15 @@ export default function Table() {
   const data = useData(pathname);
   if (!data) return null;
 
+  const [modalState, setModalState] = useState(false);
+
   const { table, rows } = data;
   if (table !== pathname.slice(1)) return null;
 
   const record = columns[0];
-  const noData = !rows[0] ? NoData(record) : null;
+  const noData = !rows[0] ? NoData(record) : false;
   const thead = Thead(columns);
   const tbody = Tbody(rows, columns);
-
   const Table = noData ? null : (
     <>
       <table>
@@ -32,9 +34,15 @@ export default function Table() {
 
   return (
     <>
+      <Modal state={modalState} />
       <div className="top-of-table-div">
         {noData}
-        <button className="cta-button">Create {record}</button>
+        <button
+          onClick={() => setModalState(!modalState)}
+          className="cta-button"
+        >
+          Create {record}
+        </button>
       </div>
       {Table}
     </>
