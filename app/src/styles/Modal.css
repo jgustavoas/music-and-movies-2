@@ -1,0 +1,23 @@
+div#modal {
+  position: absolute;
+  background-color: transparent;
+  backdrop-filter: blur(8px);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+div#modal-container {
+  border: 1px solid var(--accent-color);
+  border-radius: var(--border-radius);
+  width: auto;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  min-height: 25vh;
+  justify-content: space-between;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
