@@ -14,7 +14,7 @@ export default function Table() {
   const data = useData(pathname);
   if (!data) return null;
 
-  const [modalState, setModalState] = useState(false);
+  const [open, toggleModal] = useState(false);
 
   const { table, rows } = data;
   if (table !== pathname.slice(1)) return null;
@@ -34,13 +34,10 @@ export default function Table() {
 
   return (
     <>
-      <Modal toggle={modalState} hook={setModalState} />
+      <Modal stateManagement={[open, toggleModal]} />
       <div className="top-of-table-div">
         {noData}
-        <button
-          onClick={() => setModalState(!modalState)}
-          className="cta-button"
-        >
+        <button onClick={() => toggleModal(!open)} className="cta-button">
           Create {record}
         </button>
       </div>
