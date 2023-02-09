@@ -34,7 +34,7 @@ export default function Table() {
 
   return (
     <>
-      <Modal toggle={modalState} />
+      <Modal toggle={modalState} hook={setModalState} />
       <div className="top-of-table-div">
         {noData}
         <button
