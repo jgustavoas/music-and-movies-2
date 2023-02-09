@@ -1,10 +1,10 @@
-import { useEffect } from 'react';
+import { useModal } from '../hooks/useModal';
 import '../styles/Modal.css';
 
-export default function Modal({ state }) {
-  useEffect(() => () => state, [state]);
+export default function Modal({ toggle }) {
+  const state = useModal(toggle);
 
-  if (state === false) return null;
+  if (!state) return null;
 
   return (
     <div id="modal">
