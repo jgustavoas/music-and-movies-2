@@ -1,6 +1,6 @@
-import { useState } from 'react';
 import PropTypes from 'prop-types';
 import { useData } from '../hooks/useData';
+import useModal from '../hooks/useModal';
 import Thead from './Table.Thead';
 import Tbody from './Table.Tbody';
 import NoData from './Table.NoData';
@@ -14,7 +14,7 @@ export default function Table() {
   const data = useData(pathname);
   if (!data) return null;
 
-  const [open, toggleModal] = useState(false);
+  const [open, toggleModal] = useModal(false);
 
   const { table, rows } = data;
   if (table !== pathname.slice(1)) return null;
