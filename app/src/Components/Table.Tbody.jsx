@@ -1,4 +1,9 @@
+import { useContext } from 'react';
+import { ModalContext } from '../contexts/ModalContext';
+
 export default function Tbody({ rows, columns }) {
+  const [open, toggleModal] = useContext(ModalContext);
+
   const tr = rows.map((row, i) => {
     const TDs = columns.map((col, ii) => {
       const columnName = col.split('*')[0];
@@ -15,7 +20,7 @@ export default function Tbody({ rows, columns }) {
       <tr key={`tr_${i}`}>
         {TDs}
         <td>
-          <button>Edit</button>
+          <button onClick={() => toggleModal(!open)}>Edit</button>
           <button>Delete</button>
         </td>
       </tr>
