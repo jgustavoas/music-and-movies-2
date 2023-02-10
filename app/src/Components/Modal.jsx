@@ -1,7 +1,9 @@
+import { useContext } from 'react';
+import { ModalContext } from '../contexts/ModalContext';
 import '../styles/Modal.css';
 
-export default function Modal({ stateManagement }) {
-  const [open, toggleModal] = stateManagement;
+export default function Modal() {
+  const [open, toggleModal] = useContext(ModalContext);
 
   if (!open) return null;
 
