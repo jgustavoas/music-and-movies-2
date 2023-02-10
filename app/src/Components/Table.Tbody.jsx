@@ -1,4 +1,4 @@
-export default function Tbody(rows, columns) {
+export default function Tbody({ rows, columns }) {
   const tr = rows.map((row, i) => {
     const TDs = columns.map((col, ii) => {
       const columnName = col.split('*')[0];
