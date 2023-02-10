@@ -20,8 +20,10 @@ export default function Tbody({ rows, columns }) {
       <tr key={`tr_${i}`}>
         {TDs}
         <td>
-          <button onClick={() => toggleModal(!open)}>Edit</button>
-          <button>Delete</button>
+          <button onClick={() => toggleModal(!open)} title="Edit">
+            Edit
+          </button>
+          <button title="Delete">Delete</button>
         </td>
       </tr>
     );

@@ -1,6 +1,7 @@
 div#modal {
   position: absolute;
   top: 0;
+  z-index: 1000;
   background-color: transparent;
   backdrop-filter: blur(8px);
   width: 100%;
