@@ -4,7 +4,6 @@ import { ModalContext } from '../contexts/ModalContext';
 import Thead from './Table.Thead';
 import Tbody from './Table.Tbody';
 import NoData from './Table.NoData';
-import Modal from './Modal';
 import paths from '../objects/paths.obj';
 
 export default function Table() {
@@ -23,7 +22,6 @@ export default function Table() {
 
   return (
     <>
-      <Modal />
       <div className="top-of-table-div">
         {noData}
         <button onClick={() => toggleModal(!open)} className="cta-button">
