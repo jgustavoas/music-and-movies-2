@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import { useData } from '../hooks/useData';
 import useModal from '../hooks/useModal';
 import Thead from './Table.Thead';
@@ -45,7 +44,3 @@ export default function Table() {
     </>
   );
 }
-
-Table.propTypes = {
-  data: PropTypes.array,
-};
