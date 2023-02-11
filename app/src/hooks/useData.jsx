@@ -2,7 +2,7 @@ import { useReducer, useEffect } from 'react';
 import dataReducer from '../store/reducer';
 import paths from '../objects/paths.obj';
 
-export function useData(pathname) {
+export default function useData(pathname) {
   const baseURL = 'http://localhost:3000';
   const [mainColumn] = paths.find(p => p.path === pathname).columns;
   const endpoint = `${baseURL}${pathname}?by=${mainColumn}`;

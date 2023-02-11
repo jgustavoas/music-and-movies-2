@@ -1,13 +1,13 @@
-import { useContext } from 'react';
-import { useData } from '../hooks/useData';
-import { ModalContext } from '../contexts/ModalContext';
+import useData from '../hooks/useData';
+import useModal from '../hooks/useModal';
+import Modal from './Modal';
 import Thead from './Table.Thead';
 import Tbody from './Table.Tbody';
 import NoData from './Table.NoData';
 import paths from '../objects/paths.obj';
 
 export default function Table() {
-  const [open, toggleModal] = useContext(ModalContext);
+  const [open, toggleModal] = useModal(false);
   const { pathname } = document.location;
   const { columns } = paths.find(p => p.path === pathname);
 
@@ -22,6 +22,7 @@ export default function Table() {
 
   return (
     <>
+      <Modal stateManagement={[open, toggleModal]} />
       <div className="top-of-table-div">
         {noData}
         <button onClick={() => toggleModal(!open)} className="cta-button">
@@ -32,7 +33,11 @@ export default function Table() {
         {noData ? null : (
           <table>
             <Thead columns={columns} />
-            <Tbody rows={rows} columns={columns} />
+            <Tbody
+              rows={rows}
+              columns={columns}
+              modalStateManagement={[open, toggleModal]}
+            />
           </table>
         )}
       </>

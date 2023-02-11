@@ -1,8 +1,5 @@
-import { useContext } from 'react';
-import { ModalContext } from '../contexts/ModalContext';
-
-export default function Tbody({ rows, columns }) {
-  const [open, toggleModal] = useContext(ModalContext);
+export default function Tbody({ rows, columns, modalStateManagement }) {
+  const [open, toggleModal] = modalStateManagement;
 
   const tr = rows.map((row, i) => {
     const TDs = columns.map((col, ii) => {
