@@ -1,5 +1,5 @@
 export default function Tbody({ rows, columns, modalStateManagement }) {
-  const [open, toggleModal] = modalStateManagement;
+  const [[open], toggleModal] = modalStateManagement;
 
   const tr = rows.map((row, i) => {
     const TDs = columns.map((col, ii) => {
@@ -17,7 +17,7 @@ export default function Tbody({ rows, columns, modalStateManagement }) {
       <tr key={`tr_${i}`}>
         {TDs}
         <td>
-          <button onClick={() => toggleModal(!open)} title="Edit">
+          <button onClick={() => toggleModal([!open, row])} title="Edit">
             Edit
           </button>
           <button title="Delete">Delete</button>

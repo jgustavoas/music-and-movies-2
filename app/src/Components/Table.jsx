@@ -7,7 +7,7 @@ import NoData from './Table.NoData';
 import paths from '../objects/paths.obj';
 
 export default function Table() {
-  const [open, toggleModal] = useModal(false);
+  const [[open, row], toggleModal] = useModal([false]);
   const { pathname } = document.location;
   const { columns } = paths.find(p => p.path === pathname);
 
@@ -22,10 +22,10 @@ export default function Table() {
 
   return (
     <>
-      <Modal stateManagement={[open, toggleModal]} />
+      <Modal stateManagement={[[open, row, record], toggleModal]} />
       <div className="top-of-table-div">
         {noData}
-        <button onClick={() => toggleModal(!open)} className="cta-button">
+        <button onClick={() => toggleModal([!open])} className="cta-button">
           Create {record}
         </button>
       </div>
@@ -36,7 +36,7 @@ export default function Table() {
             <Tbody
               rows={rows}
               columns={columns}
-              modalStateManagement={[open, toggleModal]}
+              modalStateManagement={[[open], toggleModal]}
             />
           </table>
         )}
