@@ -1,0 +1,32 @@
+section {
+    display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+}
+
+input,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  padding: 1rem;
+  color: var(--font-color);
+  border: 1px solid var(--accent-color);
+  border-radius: var(--border-radius);
+}
+
+input {
+  flex: 1;
+  width: auto;
+  background-color: var(--accent-color-10);
+}
+
+input:focus {
+  background-color: var(--accent-color-20);
+}
+
+label {
+  text-transform: uppercase;
+  width: 10rem;
+  font-weight: 500;
+}

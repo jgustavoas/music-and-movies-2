@@ -25,8 +25,9 @@ input, select {
     padding: 1rem;
     color: var(--font-color);
     border-radius: var(--border-radius);
+    border: 1px solid var(--font-color);
 }
 
 input {
-    width: 100%;
+    width: auto;
 }

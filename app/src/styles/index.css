@@ -16,6 +16,8 @@
   -webkit-text-size-adjust: 100%;
 
   --accent-color: hsl(243, 42%, 36%);
+  --accent-color-10: hsla(243, 42%, 36%, 0.1);
+  --accent-color-20: hsla(243, 42%, 36%, 0.2);
 }
 
 a {
