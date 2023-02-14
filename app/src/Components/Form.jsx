@@ -1,11 +1,11 @@
 import paths from '../objects/paths.obj';
 import '../styles/Form.css';
 
-export default function Form({ formData }) {
+export default function Form({ action, formData }) {
   const { pathname } = document.location;
   const { columns, fields } = paths.find(p => p.path === pathname);
 
-  const form = fields.map((type, i) => {
+  const inputs = fields.map((type, i) => {
     const columnName = columns[i].replace('*', '');
     const columnValue = formData?.[columnName] || null;
 
@@ -30,5 +30,10 @@ export default function Form({ formData }) {
     return input;
   });
 
-  return form;
+  return (
+    <>
+      {inputs}
+      <button type="submit">Save</button>
+    </>
+  );
 }

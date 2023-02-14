@@ -46,7 +46,7 @@
 }
 
 #modal-container {
-  margin-top: -25rem;
+  margin-top: -10rem;
   border: 1px solid var(--accent-color);
   border-radius: var(--border-radius);
   background-color: #fff;
@@ -65,4 +65,17 @@
   flex-direction: column;
   gap: 1rem;
   margin: 2rem;
+}
+
+#modal #modal-content button {
+  background-color: var(--accent-color);
+  color: #fff;
+  height: 3rem;
+  font-size: 1rem;
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-end;
+  width: fit-content;
 }

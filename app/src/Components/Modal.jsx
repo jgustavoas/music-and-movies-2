@@ -16,7 +16,7 @@ export default function Modal({ stateManagement }) {
           <button onClick={() => toggleModal([!open])}>X</button>
         </div>
         <div id="modal-content">
-          <Form formData={row} />
+          <Form action={actionName} formData={row} />
         </div>
       </div>
     </div>
