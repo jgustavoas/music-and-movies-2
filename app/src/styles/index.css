@@ -18,6 +18,7 @@
   --accent-color: hsl(243, 42%, 36%);
   --accent-color-10: hsla(243, 42%, 36%, 0.1);
   --accent-color-20: hsla(243, 42%, 36%, 0.2);
+  --cta-button-color: hsl(237, 86%, 64%);
 }
 
 a {
@@ -27,7 +28,7 @@ a {
   transition: color 0.1s ease-out;
 }
 a:hover {
-  color: #535bf2;
+  color: var(--cta-button-color);
 }
 
 #root {
