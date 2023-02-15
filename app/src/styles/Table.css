@@ -1,0 +1,48 @@
+table {
+  min-width: 25%;
+  border-collapse: collapse;
+}
+
+th {
+  text-align: left;
+  text-transform: uppercase;
+  background-color: var(--accent-color-10);
+  color: var(--accent-color);
+}
+
+tr {
+  height: 3rem;
+  position: relative;
+}
+
+th,
+td {
+  border: 1px solid var(--accent-color-20);
+  padding: 0 0.5rem;
+}
+
+th:last-of-type,
+td:last-of-type {
+  position: absolute;
+  left: calc(100% - 0.5rem);
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  border: none;
+}
+
+tr:hover td:last-of-type {
+  opacity: 1;
+}
+
+td button {
+  padding: 0 1rem;
+  height: 3rem;
+  width: auto;
+  border-radius: 0;
+  background-color: var(--accent-color-10);
+}
+
+td button:hover {
+  background-color: var(--accent-color-20);
+}

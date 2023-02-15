@@ -5,6 +5,7 @@ import Thead from './Table.Thead';
 import Tbody from './Table.Tbody';
 import NoData from './Table.NoData';
 import paths from '../objects/paths.obj';
+import '../styles/Table.css';
 
 export default function Table() {
   const [[open, row], toggleModal] = useModal([false]);

@@ -48,40 +48,6 @@ h1 {
   margin-top: 0;
 }
 
-table {
-  width: 50%;
-}
-
-th {
-  text-align: left;
-  text-transform: capitalize;
-}
-
-tr {
-  height: 3rem;
-  position: relative;
-}
-
-th:last-of-type,
-td:last-of-type {
-  position: absolute;
-  left: calc(100% - 4rem);
-  display: flex;
-  gap: 0.5rem;
-  align-items: center;
-  opacity: 0;
-}
-
-tr:hover td:last-of-type {
-  opacity: 1;
-}
-
-td button {
-  padding: 0 1rem;
-  height: 3rem;
-  width: auto;
-}
-
 button {
   border-radius: var(--border-radius);
   border: 1px solid transparent;
