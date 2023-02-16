@@ -19,7 +19,7 @@ main #search-field {
     gap: 1rem;
 }
 
-input, select {
+main > input, main > select {
     font-family: inherit;
     font-size: inherit;
     padding: 1rem;
@@ -28,6 +28,6 @@ input, select {
     border: 1px solid var(--font-color);
 }
 
-input {
+main > input {
     width: auto;
 }

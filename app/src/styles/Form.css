@@ -7,17 +7,14 @@ section {
 
 input,
 select {
+  flex: 2;
   font-family: inherit;
   font-size: inherit;
   padding: 1rem;
+  width: 100%;
   color: var(--font-color);
   border: 1px solid var(--accent-color);
   border-radius: var(--border-radius);
-}
-
-input {
-  flex: 1;
-  width: auto;
   background-color: var(--accent-color-10);
 }
 
@@ -26,7 +23,7 @@ input:focus {
 }
 
 label {
-  text-transform: uppercase;
-  width: 10rem;
+  flex: 1;
+  text-transform: uppercase;  
   font-weight: 500;
 }
