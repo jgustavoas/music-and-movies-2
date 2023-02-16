@@ -7,6 +7,7 @@ export default function Modal({ stateManagement }) {
   if (!open) return null;
 
   const actionName = row ? `Edit ` : 'Create ';
+  const formData = row || null;
 
   return (
     <div id="modal">
@@ -16,7 +17,7 @@ export default function Modal({ stateManagement }) {
           <button onClick={() => toggleModal([!open])}>X</button>
         </div>
         <div id="modal-content">
-          <Form formData={row} />
+          <Form formData={formData} />
         </div>
       </div>
     </div>
