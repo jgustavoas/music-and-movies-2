@@ -1,37 +1,22 @@
-import useData from '../hooks/useData';
+import Input from './Form.Input';
 import paths from '../objects/paths.obj';
 import '../styles/Form.css';
 
 export default function Form({ formData }) {
   const { pathname } = document.location;
-  const { columns, fields } = paths.find(p => p.path === pathname);
+  const { columns } = paths.find(p => p.path === pathname);
 
-  const genres = useData('/genres');
-  console.log('genres :>> ', genres);
-
-  const inputs = fields.map((type, i) => {
-    const columnName = columns[i].replace('*', '');
-    const columnValue = formData?.[columnName] || null;
+  const inputs = columns.map((columnName, index) => {
+    const name = columnName.replace('*', '');
+    const foreignTable = columnName.includes('*');
+    const columnValue = formData?.[name];
 
     const notObject = typeof columnValue !== 'object' || !columnValue;
-    const inputValue = notObject ? columnValue : columnValue[columnName];
+    const value = notObject ? columnValue : formData[name][name];
+    const type = foreignTable ? 'select' : 'text';
+    const inputProps = { type, name, index, value };
 
-    const input = (
-      <section key={`section-input_${i}`}>
-        <label key={`label_${i}`} htmlFor={columnName}>
-          {columnName}
-        </label>
-        <input
-          key={`input_${i}`}
-          type={type}
-          name={columnName}
-          id={columnName}
-          defaultValue={inputValue}
-        />
-      </section>
-    );
-
-    return input;
+    return <Input key={index} props={inputProps} />;
   });
 
   return (
