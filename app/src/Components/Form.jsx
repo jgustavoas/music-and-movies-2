@@ -1,9 +1,13 @@
+import useData from '../hooks/useData';
 import paths from '../objects/paths.obj';
 import '../styles/Form.css';
 
-export default function Form({ action, formData }) {
+export default function Form({ formData }) {
   const { pathname } = document.location;
   const { columns, fields } = paths.find(p => p.path === pathname);
+
+  const genres = useData('/genres');
+  console.log('genres :>> ', genres);
 
   const inputs = fields.map((type, i) => {
     const columnName = columns[i].replace('*', '');
@@ -33,7 +37,7 @@ export default function Form({ action, formData }) {
   return (
     <>
       {inputs}
-      <button type="submit">Save</button>
+      <button type="submit">SAVE</button>
     </>
   );
 }
