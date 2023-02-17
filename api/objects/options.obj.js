@@ -8,13 +8,13 @@ module.exports = {
   },
   artists: {
     attributes: ['id', 'artist', 'genre_id', ...defaultColumns],
-    include: [{ model: models.genres, attributes: ['genre'] }],
+    include: [{ model: models.genres, attributes: ['id', 'genre'] }],
   },
   albums: {
     attributes: ['id', 'album', 'artist_id', 'genre_id', ...defaultColumns],
     include: [
-      { model: models.artists, attributes: ['artist'] },
-      { model: models.genres, attributes: ['genre'] },
+      { model: models.artists, attributes: ['id', 'artist'] },
+      { model: models.genres, attributes: ['id', 'genre'] },
     ],
   },
   tracks: {
@@ -28,26 +28,27 @@ module.exports = {
       ...defaultColumns,
     ],
     include: [
-      { model: models.albums, attributes: ['album'] },
-      { model: models.artists, attributes: ['artist'] },
-      { model: models.genres, attributes: ['genre'] },
+      { model: models.albums, attributes: ['id', 'album'] },
+      { model: models.artists, attributes: ['id', 'artist'] },
+      { model: models.genres, attributes: ['id', 'genre'] },
     ],
   },
   movies: {
     attributes: ['id', 'movie', 'genre_id', ...defaultColumns],
+    include: [{ model: models.genres, attributes: ['id', 'genre'] }],
   },
 };
 
 /*
-  "include" is a list of associations to eagerly load using a left join. 
-  
+  "include" is a list of associations to eagerly load using a left join.
+
   Type: Array<object|Model|string>
-  
-  Supported is either { include: [ Model1, Model2, ...]} 
-  or { include: [{ model: Model1, as: 'Alias' }]} 
-  or { include: ['Alias']}. 
-  
-  If your association are set up with an "as" (eg. X.hasMany(Y, { as: 'Z }, 
+
+  Supported is either { include: [ Model1, Model2, ...]}
+  or { include: [{ model: Model1, as: 'Alias' }]}
+  or { include: ['Alias']}.
+
+  If your association are set up with an "as" (eg. X.hasMany(Y, { as: 'Z },
   you need to specify Z in the as attribute when eager loading Y).
 
   https://sequelize.org/api/v6/class/src/model.js~model#static-method-findAll
