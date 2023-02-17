@@ -9,12 +9,8 @@ export default function Form({ formData }) {
   const inputs = columns.map((columnName, index) => {
     const name = columnName.replace('*', '');
     const foreignTable = columnName.includes('*');
-    const columnValue = formData?.[name];
-
-    const notObject = typeof columnValue !== 'object' || !columnValue;
-    const value = notObject ? columnValue : formData[name][name];
     const type = foreignTable ? 'select' : 'text';
-    const inputProps = { type, name, index, value };
+    const inputProps = { type, name, index, formData };
 
     return <Input key={index} props={inputProps} />;
   });
@@ -22,6 +18,7 @@ export default function Form({ formData }) {
   return (
     <>
       {inputs}
+      <input type="hidden" name="id" value={formData?.id} />
       <button type="submit">SAVE</button>
     </>
   );
