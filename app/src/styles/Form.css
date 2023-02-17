@@ -18,6 +18,10 @@ select {
   background-color: var(--accent-color-10);
 }
 
+select:hover {
+  cursor: pointer;
+}
+
 input:focus {
   background-color: var(--accent-color-20);
 }
