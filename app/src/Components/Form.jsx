@@ -1,4 +1,5 @@
 import Input from './Form.Input';
+import submit from '../functions/form.func';
 import paths from '../objects/paths.obj';
 import '../styles/Form.css';
 
@@ -19,7 +20,9 @@ export default function Form({ formData }) {
     <>
       {inputs}
       <input type="hidden" name="id" value={formData?.id} />
-      <button type="submit">SAVE</button>
+      <button type="submit" onClick={submit}>
+        SAVE
+      </button>
     </>
   );
 }
